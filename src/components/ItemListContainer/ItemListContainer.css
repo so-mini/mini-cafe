@@ -1,0 +1,13 @@
+.item-container {
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+}
+
+.landing-greeting {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px;
+    padding: 0 30px 30px 30px;
+    color: pink;
+}

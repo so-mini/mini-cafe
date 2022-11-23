@@ -1,0 +1,12 @@
+.cart-img {
+    display: inline;
+    width: 25px;
+    height: 25px;
+}
+
+.cart-qty{
+    font-size: 15px;
+    font-weight:300;
+    display: inline;
+    padding-left: 2px;
+}
