@@ -1,0 +1,8 @@
+.details-link {
+    text-decoration: none;
+    color: grey;
+}
+
+a.details-link:hover{
+    color: #FF648F;
+}
