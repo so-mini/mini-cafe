@@ -1,9 +1,20 @@
+
+import { useCartContext } from "../../context/CartContext"
+
 import ItemCount from "../ItemCount/ItemCount"
 
+
 const ItemDetail = ({product}) => {
+
+    const { cartList, addToCart} = useCartContext()
+
     const onAdd = (qty) => {
         console.log('The quantity of products added to the cart is: ', qty)
+        addToCart({ ... product, qty })
+
     }
+
+    console.log(cartList)
 
     return (
         <div className="container border border-3 border-primary rounded">

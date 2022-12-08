@@ -8,7 +8,7 @@ const Item = ({ product }) => {
     return (
         <div>
             <Row xs={1} md={2} lg={3} className="g-3">
-                {Array.from({ length: 3 }).map((_, idx) => (
+                {Array.from({ length: 1 }).map((_, idx) => (
                     <Col>
                         <Card style={{ width: '18rem', margin: '30px' }}>
                             <Card.Img variant="top" src={product.photo} alt='Image of product.' />
