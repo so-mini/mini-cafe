@@ -1,0 +1,17 @@
+form, label {
+    margin: 5px auto;
+    text-align: center;
+    display: block;
+    padding: 10px;
+}
+
+input.inputStyles {
+    margin: 10px auto;
+    text-align: center;
+    display: block;
+}
+
+div.formStyles{
+    padding-top: 20px;
+
+}

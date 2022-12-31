@@ -1,0 +1,14 @@
+div.card-body {
+    margin: 0 auto;
+}
+
+.itemCount{
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.addCartButton{
+    margin: 0 auto;
+    padding-left: 9px;
+}

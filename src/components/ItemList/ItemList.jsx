@@ -1,9 +1,18 @@
+import {memo} from 'react'
 import Item from '../Item/Item';
+import './ItemList.css'
 
-const ItemList = ({products}) => {
+
+const ItemList = memo( ({products}) => {
+
   return (
-    products.map(product => <Item key={product.id} product={product}/>)
+
+    <div className="productCards">
+    {products.map( product => <Item key={product.id} product={product} /> )}
+    </div>
+
   )
 }
+)
 
-export default ItemList;
+export default ItemList

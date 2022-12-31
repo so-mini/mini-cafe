@@ -1,0 +1,26 @@
+div.itemDetail{
+    margin: 60px auto;
+    padding: 50px;
+}
+
+.itemDetailImage{
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.itemDetailInfo {
+    margin: 0 auto;
+
+}
+
+h2.productName{
+    font-size: 1.5rem;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+div.goTo{
+    margin: 0 auto;
+    text-align: center;
+}
+

@@ -1,38 +1,53 @@
-
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
-
 import ItemCount from "../ItemCount/ItemCount"
+import Button from 'react-bootstrap/Button';
+import "./ItemDetail.css"
 
 
 const ItemDetail = ({product}) => {
 
-    const { cartList, addToCart} = useCartContext()
+    const [isQty, setIsQty] = useState(false)
+
+    const { addToCart} = useCartContext()
 
     const onAdd = (qty) => {
-        console.log('The quantity of products added to the cart is: ', qty)
         addToCart({ ... product, qty })
-
+        setIsQty(true)
     }
 
-    console.log(cartList)
-
     return (
-        <div className="container border border-3 border-primary rounded">
+        <div className="itemDetail container border border-3">
             <div className="row">
 
                 < div className="col">
-                    <img className="w-50" src={product.photo} alt="Image of the product" />
-                    <h2>{product.category}</h2>
-                    <h3>{product.name}</h3>
-                    <h4>{product.price}</h4>
+                    <img className="itemDetailImage" src={product.photo} alt="Image of the product" />
                 </div>
 
                 <div className="col">
-                    <ItemCount
-                        stock={50}
-                        initial={1}
-                        onAdd={onAdd}
-                    />
+                    <div className="itemDetailInfo">
+                        <h2 className="productName">{product.name} - {product.category} - ${product.price}</h2>
+                    </div>
+
+                    {isQty ?
+                        <div className="goTo">
+                            <Link to="/cart">
+                                <Button variant="light" style={{ margin:'5px'}}>Go to cart</Button>
+                            </Link>
+                            <Link to="/">
+                                <Button variant="light" style={{ margin:'5px'}}>Continue Shopping</Button>
+                            </Link>
+                        </div>
+
+                        :        
+
+                        <ItemCount
+                            stock={50}
+                            initial={1}
+                            onAdd={onAdd}
+                        />
+                    }       
                 </div>
 
             </div>
@@ -41,4 +56,3 @@ const ItemDetail = ({product}) => {
 }
 
 export default ItemDetail
-

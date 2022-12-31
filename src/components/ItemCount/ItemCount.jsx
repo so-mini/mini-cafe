@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import "./ItemCount.css"
 
 const ItemCount = ({ stock = 10, initial = 1, onAdd}) => {
     const [count, setCount] = useState(initial)
@@ -9,7 +11,6 @@ const ItemCount = ({ stock = 10, initial = 1, onAdd}) => {
             setCount(count - 1)
         }
     }
-
 
     const plus = () => {
         if (count < stock) {
@@ -21,14 +22,14 @@ const ItemCount = ({ stock = 10, initial = 1, onAdd}) => {
 
     return (
         <div className="card">
-            <div className="card-header">
-                <label htmlFor="">{count}</label>
-            </div>
             <div className="card-body">
-                <button onClick={minus} className="btn btn-outline-primary">-</button>
-                <button onClick={plus} className="btn btn-outline-primary">+</button>
-                <div className="card-footer">
-                    <button className="btn btn-outline-success btn-block" onClick={handleOnAdd}>Add to Cart</button>
+                <div className="itemCount">
+                    <label htmlFor="" style={{ margin:'7px'}}>{count}</label>
+                    <Button onClick={minus} style={{ margin:'2px'}} variant="light">-</Button>
+                    <Button onClick={plus} style={{ margin:'2px'}} variant="light">+</Button>
+                </div>
+                <div className="addCartButton">
+                    <Button variant="outline-success" onClick={handleOnAdd} style={{ margin:'10px'}}>Add to Cart</Button>
                 </div>
             </div>
         </div>
